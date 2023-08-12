@@ -1,0 +1,213 @@
+@charset "utf-8";
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  height: 100%;
+}
+body {
+  font-family: "Public Sans", sans-serif;
+  font-size: 1.2rem;
+  min-height: 100%;
+}
+.grid-container > * {
+  box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 4px;
+  padding: 10px;
+  text-align: center;
+}
+.header {
+  grid-area: header;
+  background-color: #85aedd;
+}
+.navbar {
+  grid-area: navbar;
+  background-color: #afd6af;
+}
+.sidebar {
+  grid-area: sidebar;
+  background-color: #fdcfcf;
+}
+.main {
+  grid-area: main;
+  background-color: #f5f5f5;
+}
+.footer {
+  grid-area: footer;
+  background-color: #06b139;
+}
+.grid-container {
+  display: grid;
+  gap: 10px;
+  grid-template:
+    "header" 100px
+    "navbar" 50px
+    "main" auto
+    "sidebar" 100px
+    "footer" 100px;
+}
+@media (min-width: 600px) {
+  .grid-container {
+    /* grid-template-columns: 200px auto;
+    grid-template-rows: 100px 50px auto 100px;
+    grid-template-areas:
+    "header  header"
+    "navbar  navbar"
+    "sidebar main"
+    "footer  footer"; */
+    grid-template:
+      "header  header" 100px
+      "navbar  navbar" 50px
+      "sidebar main" auto
+      "footer  footer" 100px /
+      200px auto;
+  }
+}
+@media (min-width: 900px) {
+  .grid-container {
+    grid-template:
+      "header  header header" 100px
+      "navbar  main   sidebar" auto
+      "footer  footer footer" 100px /
+      200px auto 200px;
+  }
+}
+/* Estilos del contenedor secundario */
+.subcontainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  margin: 20px;
+}
+/* Estilos de los subpaneles */
+.subpanel1,
+.subpanel2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  padding: 10px;
+  margin: 20px;
+  /* ... otros estilos ... */
+}
+--- body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+.content {
+  padding: 20px;
+}
+.footer {
+  background-color: rgb(232, 104, 62);
+  color: #a7bc0a;
+  text-align: center;
+  padding: 10px;
+}
+.grid-footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Crea 3 columnas de igual ancho */
+  gap: 10px; /* Espacio entre las columnas */
+}
+.grid-item {
+  background-color: #530865;
+  padding: 20px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+/* Media query para pantallas entre 600px y 900px */
+@media (min-width: 600px) and (max-width: 900px) {
+  .grid-footer {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(52, 13, 168);
+  }
+  /* Ajusta el estilo del footer en la media query */
+  .footer {
+    background-color: yellow; /* Cambia el color de fondo del footer */
+    padding: 20px; /* Agrega un espacio interno de 20px al footer */
+    text-align: center; /* Centra el contenido del footer horizontalmente */
+    height: 250px;
+  }
+}
+/* Media query para pantallas de 600px o menos */
+@media (max-width: 600px) {
+  .grid-footer {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(168, 13, 62);
+  }
+  /* Ajusta el estilo del footer en la media query */
+  .footer {
+    background-color: rgb(
+      168,
+      13,
+      62
+    ); /* Cambia el color de fondo del footer */
+    padding: 20px; /* Agrega un espacio interno de 20px al footer */
+    text-align: center; /* Centra el contenido del footer horizontalmente */
+    height: 290px;
+  }
+}
+
+
+/* Estilos para el contenido principal */
+.estilos-main {
+    background-color: #540AC6;
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+    min-height: 334px;
+}
+
+/* Estilos para el contenedor centra y crea margenes */
+.texto-1 {
+    display: flex;
+    background-color: #CD2943;
+    margin-bottom: 20px;
+    padding: 20px;
+    color: white;
+}
+
+.texto-1 .image {
+    flex: 1; /* Ocupa el espacio restante */
+    padding-right: 20px; /* Espaciado entre la imagen y el texto */
+}
+
+.texto-1 .image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.texto-1 .text {
+    flex: 2; /* Ocupa el doble de espacio que la imagen */
+}
+
+@media (max-width: 768px) {
+    .texto-1 {
+        flex-direction: column;
+    }
+
+    .texto-1 .image,
+    .texto-1 .text {
+        padding-right: 0;
+    }
+}
+
+
+/* Estilos para pantallas con un ancho mayor a 769px  imagen se ve arriba y abajo texto*/
+@media (min-width: 770px) {
+    .texto-1 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .texto-1 .image,
+    .texto-1 .text {
+        padding-right: 20px; /* O el valor que desees */
+        align-items: center;
+    }
+}
