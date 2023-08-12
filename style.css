@@ -16,7 +16,6 @@ body {
 .grid-container > * {
   box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
   border-radius: 4px;
-  padding: 10px;
   text-align: center;
 }
 .header {
@@ -152,8 +151,6 @@ body {
     height: 290px;
   }
 }
-
-
 /* Estilos para el contenido principal */
 .estilos-main {
     background-color: #540AC6;
@@ -162,7 +159,6 @@ body {
     text-align: center;
     min-height: 334px;
 }
-
 /* Estilos para el contenedor centra y crea margenes */
 .texto-1 {
     display: flex;
@@ -171,40 +167,32 @@ body {
     padding: 20px;
     color: white;
 }
-
 .texto-1 .image {
     flex: 1; /* Ocupa el espacio restante */
     padding-right: 20px; /* Espaciado entre la imagen y el texto */
 }
-
 .texto-1 .image img {
     max-width: 100%;
     height: auto;
 }
-
 .texto-1 .text {
     flex: 2; /* Ocupa el doble de espacio que la imagen */
 }
-
 @media (max-width: 768px) {
     .texto-1 {
         flex-direction: column;
     }
-
     .texto-1 .image,
     .texto-1 .text {
         padding-right: 0;
     }
 }
-
-
 /* Estilos para pantallas con un ancho mayor a 769px  imagen se ve arriba y abajo texto*/
 @media (min-width: 770px) {
     .texto-1 {
         flex-direction: column;
         align-items: center;
     }
-
     .texto-1 .image,
     .texto-1 .text {
         padding-right: 20px; /* O el valor que desees */
